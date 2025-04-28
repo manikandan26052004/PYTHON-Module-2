@@ -1,36 +1,41 @@
 # Exp.No:2d
 ## LOOPING PATTERNS - PRINTING PATTERN
 
----
-
 ### AIM  
-To write a Python program to print a triangular star pattern using loops.
-
----
+To write a python program to print Pascal triangle
 
 ### ALGORITHM
 
-1. Begin the program.  
-2. Read the integer `n` from the user using `input()`. This will determine the number of rows in the pattern.  
-3. Initialize a variable `i = 0`. This will help adjust the spacing before the stars.  
-4. Loop through rows from `0` to `n - 1`:  
-   - For each row, calculate the number of spaces to print using the formula: `((n - rows - 1) * 2) + i`.  
-   - Print the calculated number of spaces using `print(" ", end="")`.  
-   - Increment `i` by 1 after each row.  
-   - Print stars using a nested loop: the number of stars in each row is `rows + 1`, printed using `print("*", end="  ")`.  
-   - Print a newline after each row using `print("")` to move to the next line.  
-5. Terminate the program.
-
----
+1. Begin the program.
+2. Use input() to get the number of rows (rows) from the user.
+3. Initialize coef to 1.
+4. Use a nested for loop to generate and print Pascal’s Triangle:
+   Outer loop for rows from 1 to rows.
+   Inner loop for spaces to align the numbers.
+   Inner loop for calculating and printing the coefficients.
+5. Print the result for each row.
+6. Terminate the program.
 
 ### PROGRAM
 ```
-#Reg.No:
-#Name:
-#Add Your Code Here
-
+#REG NO: 212222220022
+#NAME: MANIKANDAN R
+rows=int(input())
+coef=1
+for i in range(1,rows+1):
+    for space in range(1,rows-i+1):
+        print(" ",end="")
+    for j in range(0,i):
+        if j==0 or i==0:
+            coef=1
+        else:
+            coef=coef*(i-j)//j
+        print(coef,end=" ")
+    print()
 ```
 
 ### OUTPUT
+![Screenshot 2025-04-27 142321](https://github.com/user-attachments/assets/626fd405-8742-4486-9f8d-84d71346b46b)
 
 ### RESULT
+Thus a python program to print Pascal triangle has been implemented successfully.
